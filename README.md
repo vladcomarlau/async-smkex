@@ -3,16 +3,16 @@
 An **asynchronous, offline-capable authentication layer for SMKEX**. It lets a
 recipient be **offline** during key exchange while preserving SMKEX's split-trust,
 multipath security: an offline recipient's PreKey bundle is authenticated over
-**two independent network paths** (a PreKey server and a Notary server) instead of
-being vouched for by a single server.
+**two independent network paths** (a PreKey server and a Notary server) instead of relying 
+on a single server to verify it.
 
 > Master's research prototype for Advanced Cybersecurity master (Year 1, Semester 2),
 > UPB
 > Author: Vlad-Constantin Comârlău. Scientific coordinator: Assoc. Prof. Dr. Eng.
 > Marios O. Choudary.
->
+
 > Research prototype, not production software. 
-> Endpoints are intentionally unauthenticated.
+> Endpoints are intentionally unauthenticated for simplicity.
 
 ## This extension adds
 
