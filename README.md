@@ -86,13 +86,6 @@ Stop and remove the servers when done:
 docker rm -f prekey notary
 ```
 
-## Scope
-
-This Semester-2 prototype demonstrates the asynchronous, split-trust key agreement
-and the queued first message. Live SIP/RTP voice/messaging transport is unchanged
-from upstream SMKEX and is out of scope; the Double Ratchet and post-quantum
-(PQXDH / ML-KEM) work are planned for later semesters.
-
 ## Credit and license
 
 This project **builds on the original SMKEX end-to-end encryption project** by
