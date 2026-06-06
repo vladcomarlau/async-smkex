@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Smkex Mobile</string>
+    <string name="title_home">Home</string>
+    <string name="title_messages">Messages</string>
+    <string name="title_settings">Settings</string>
+    <string name="permissions_required_label">Permissions Required</string>
+    <string name="permissions_details_label">The Smkex application need the approval of several permissions to work properly</string>
+    <string name="your_username_label">Your username</string>
+    <string name="sign_in_label">Sign In</string>
+    <string name="sign_out_label">Sign Out</string>
+    <string name="buddy_username_label">Buddy username</string>
+    <string name="add_buddy_label">Add buddy</string>
+    <string name="insert_message_label">Insert message</string>
+    <string name="send_message_label">Send Message</string>
+    <string name="launch_call_label">Launch Call</string>
+    <string name="end_call_label">End Call</string>
+</resources>

@@ -1,0 +1,19 @@
+PING 195.95.167.231 (195.95.167.231) 56(84) bytes of data.
+64 bytes from 195.95.167.231: icmp_seq=1 ttl=128 time=8.51 ms
+64 bytes from 195.95.167.231: icmp_seq=2 ttl=128 time=8.10 ms
+64 bytes from 195.95.167.231: icmp_seq=3 ttl=128 time=8.34 ms
+64 bytes from 195.95.167.231: icmp_seq=5 ttl=128 time=10.4 ms
+
+--- 195.95.167.231 ping statistics ---
+5 packets transmitted, 4 received, 20% packet loss, time 4022ms
+rtt min/avg/max/mdev = 8.100/8.838/10.401/0.914 ms
+PING 141.85.232.41 (141.85.232.41) 56(84) bytes of data.
+64 bytes from 141.85.232.41: icmp_seq=1 ttl=128 time=8.15 ms
+64 bytes from 141.85.232.41: icmp_seq=2 ttl=128 time=7.70 ms
+64 bytes from 141.85.232.41: icmp_seq=3 ttl=128 time=7.70 ms
+64 bytes from 141.85.232.41: icmp_seq=4 ttl=128 time=7.74 ms
+64 bytes from 141.85.232.41: icmp_seq=5 ttl=128 time=7.99 ms
+
+--- 141.85.232.41 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4005ms
+rtt min/avg/max/mdev = 7.695/7.855/8.146/0.181 ms

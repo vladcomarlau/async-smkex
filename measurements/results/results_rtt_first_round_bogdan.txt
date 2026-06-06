@@ -1,0 +1,9 @@
+- Results in ms
+
+WiFi RDS:
+SMKEX server (CSGN): 202, 144, 435, 130, 267, 294, 165, 142, 234, 146 (mean=215.9, std=95.8)
+SMKEX server (UPB): 90, 98, 96, 95, 85, 97, 137, 126, 149, 99 (mean=107.2, std=21.87)
+
+Orange:
+SMKEX server (CSGN): 310, 292, 376, 339, 361, 359, 320, 325, 274, 336 (mean=329.2, std=31.8)
+SMKEX server (UPB): 387, 273, 251, 251, 427, 296, 233, 216, 230, 238 (mean=280.2, std=71.2)

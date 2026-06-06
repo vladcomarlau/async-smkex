@@ -1,0 +1,12 @@
+PING 195.95.167.231 (195.95.167.231): 56 data bytes
+64 bytes from 195.95.167.231: icmp_seq=0 ttl=50 time=63.349 ms
+
+--- 195.95.167.231 ping statistics ---
+1 packets transmitted, 1 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 63.349/63.349/63.349/0.000 ms
+PING 141.85.232.41 (141.85.232.41): 56 data bytes
+64 bytes from 141.85.232.41: icmp_seq=0 ttl=50 time=65.056 ms
+
+--- 141.85.232.41 ping statistics ---
+1 packets transmitted, 1 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 65.056/65.056/65.056/0.000 ms

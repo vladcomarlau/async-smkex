@@ -1,0 +1,128 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 30
+
+    // Retrieve SMKEX configuration
+    Properties properties = new Properties()
+    properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
+    def SMKEX_OPENSIPS_SERVER = properties.getProperty('smkex.opensips.server')
+    def SMKEX_OPENSIPS_PORT = properties.getProperty('smkex.opensips.port')
+    def SMKEX_SERVER1 = properties.getProperty('smkex.server1')
+    def SMKEX_SERVER1_PORT = properties.getProperty('smkex.server1.port')
+    def SMKEX_SERVER2 = properties.getProperty('smkex.server2')
+    def SMKEX_SERVER2_PORT = properties.getProperty('smkex.server2.port')
+    def SMKEX_USERNAME = properties.getProperty('smkex.credentials.username')
+    def SMKEX_PASSWORD = properties.getProperty('smkex.credentials.password')
+
+    // Validate properties
+    if (SMKEX_SERVER1 == null || SMKEX_SERVER2 == null || SMKEX_OPENSIPS_SERVER == null
+            || SMKEX_SERVER1_PORT == null || SMKEX_SERVER2_PORT == null || SMKEX_OPENSIPS_PORT == null
+            || SMKEX_USERNAME == null || SMKEX_PASSWORD == null) {
+        throw new GradleException("Could not found values for smkex configuration in local.properties file")
+    }
+
+    defaultConfig {
+        applicationId "org.certsign.smkex"
+        minSdkVersion 23
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        archivesBaseName = "smkex-android-$versionName-rc$versionCode"
+
+        ndk {
+            abiFilters "armeabi", "armeabi-v7a", "arm64-v8a"
+        }
+
+        buildConfigField("String", "SMKEX_OPENSIPS_SERVER", "\"$SMKEX_OPENSIPS_SERVER\"")
+        buildConfigField("int", "SMKEX_OPENSIPS_PORT", "$SMKEX_OPENSIPS_PORT")
+        buildConfigField("String", "SMKEX_SERVER1", "\"$SMKEX_SERVER1\"")
+        buildConfigField("int", "SMKEX_SERVER1_PORT", "$SMKEX_SERVER1_PORT")
+        buildConfigField("String", "SMKEX_SERVER2", "\"$SMKEX_SERVER2\"")
+        buildConfigField("int", "SMKEX_SERVER2_PORT", "$SMKEX_SERVER2_PORT")
+        buildConfigField("String", "SMKEX_USERNAME", "\"$SMKEX_USERNAME\"")
+        buildConfigField("String", "SMKEX_PASSWORD", "\"$SMKEX_PASSWORD\"")
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    sourceSets {
+        main {
+            jni.srcDirs = []
+        }
+    }
+
+    lintOptions {
+        quiet true
+        abortOnError false
+    }
+
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+
+dependencies {
+
+    // Sources
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    // UI
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.0'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.5'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.3.5'
+    implementation 'androidx.appcompat:appcompat:1.3.1'
+
+    // Ktx support
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+    implementation "androidx.core:core-ktx:1.6.0"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
+    implementation 'androidx.vectordrawable:vectordrawable:1.1.0'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.5'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.3.5'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.1'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1'
+
+
+    // Channel select
+    implementation 'com.squareup.okhttp3:okhttp:4.9.0'
+    implementation 'org.java-websocket:Java-WebSocket:1.5.2'
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib'
+    implementation 'com.squareup.retrofit2:retrofit:2.0.0'
+    implementation "com.squareup.okhttp3:logging-interceptor:4.9.3"
+    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
+
+    // Testing
+    testImplementation 'junit:junit:4.12'
+}
+
+task buildNativeLibs(type: Exec, description: "compile the native libraries") {
+    commandLine 'make', '-f', 'NativeLibs.mk', '-C', 'src/main/jni', 'all'
+}
+
+task cleanNativeLibs(type: Exec, description: "clean the native libraries source tree") {
+    commandLine 'make', '-f', 'NativeLibs.mk', '-C', 'src/main/jni', 'clean-ndk'
+}
+
+tasks.withType(JavaCompile) { compileTask -> compileTask.dependsOn buildNativeLibs }
+
+clean.dependsOn 'cleanNativeLibs'
+
+repositories {
+    mavenCentral()
+}

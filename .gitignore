@@ -1,0 +1,43 @@
+
+########## MpVoipApp ##########
+
+# Certificates
+MultiPathVoIPLite/certs
+
+# Executables
+MultiPathVoIPLite/build
+
+
+########## ANDROID ##########
+
+# Intelij
+*.iml
+android-client/.idea/
+
+# Gradle files
+android-client/app/build/
+android-client/.gradle/
+android-client/build/
+
+# Local config files
+android-client/local.properties
+
+# Auto-generated
+android-client/app/src/main/jni/toolchains/
+android-client/app/src/main/jni/armeabi-v7a/
+android-client/app/src/main/jni/*.tar.gz
+android-client/app/src/main/libs/armeabi-v7a/
+android-client/app/src/main/obj/local/armeabi-v7a/
+
+# APKs output
+*.apk
+output.json
+
+
+########## ASYNC CLIENT ##########
+
+# Compiled binary
+asyncclient/aclient
+
+# Local key databases (contain private keys - never commit)
+asyncclient/*.db
