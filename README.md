@@ -73,19 +73,6 @@ rm -f bob.db alice.db          # start fresh (init won't regenerate over an exis
 `send` and `fetch` each print a `session key SK`; the two values are **identical**,
 proving both sides derived the same key while Bob was offline.
 
-**Split-trust security demo** — retrieving with a wrong pinned identity key is
-rejected (the second path catches the tampering):
-
-```bash
-./aclient alice.db retrieve bob <ANY_WRONG_KEY>     # => BUNDLE REJECTED
-```
-
-Stop and remove the servers when done:
-
-```bash
-docker rm -f prekey notary
-```
-
 ## Credit and license
 
 This project **builds on the original SMKEX end-to-end encryption project** by
