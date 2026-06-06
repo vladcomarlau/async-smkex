@@ -14,7 +14,7 @@ being vouched for by a single server.
 > ⚠️ Research prototype, not production software. The demo endpoints are
 > intentionally unauthenticated.
 
-## What this adds
+## This extension adds
 
 - **PreKey server (path α)** and **Notary server (path β)** — new REST endpoints on
   the SMKEX server, run as two independent instances. Bundle storage (α) is kept
