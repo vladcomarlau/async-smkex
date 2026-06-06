@@ -97,6 +97,6 @@ University POLITEHNICA of Bucharest and CertSIGN:
 
 The upstream code (the `MultiPathVoIPLite/`, `smkex-server/`, `android-client/`,
 `pjproject-2.10/` directories and others) is licensed under the **BSD 3-Clause
-License, Copyright © 2020 Marios O. Choudary** — see [SMKEX_LICENCE](SMKEX_LICENCE). All rights
+License, Copyright © 2020 Marios O. Choudary** — see [LICENSE](https://github.com/vladcomarlau/async-smkex/blob/8b72b3c577154c6531ac8b06cf884259aa5dddf3/SMKEX_LICENSE). All rights
 to the original work remain with its authors. The asynchronous extension in this
 repository is an independent academic research contribution built on top of it.
