@@ -6,13 +6,13 @@ multipath security: an offline recipient's PreKey bundle is authenticated over
 **two independent network paths** (a PreKey server and a Notary server) instead of
 being vouched for by a single server.
 
-> Master's research prototype — Advanced Cybersecurity (Year 1, Semester 2),
-> Faculty of Automatic Control and Computers, University POLITEHNICA of Bucharest.
+> Master's research prototype for Advanced Cybersecurity master (Year 1, Semester 2),
+> UPB
 > Author: Vlad-Constantin Comârlău. Scientific coordinator: Assoc. Prof. Dr. Eng.
 > Marios O. Choudary.
 >
-> ⚠️ Research prototype, not production software. The demo endpoints are
-> intentionally unauthenticated.
+> Research prototype, not production software. 
+> Endpoints are intentionally unauthenticated.
 
 ## This extension adds
 
